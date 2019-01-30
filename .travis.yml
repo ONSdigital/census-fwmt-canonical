@@ -1,0 +1,31 @@
+language: java
+jdk: oraclejdk11
+install: true
+script:
+- |
+  if [[ $TRAVIS_COMMIT_MESSAGE != 'JENKINS SNAPSHOT UPDATE' ]]; then
+    ./gradlew build --info;
+  fi
+env:
+  global:
+  - SPRING_PROFILES_ACTIVE=default,integration-tests
+  - secure: 2uCxi6yJSTRT34fIaPtrRcnfBmwXtG80f+syEM6RNv0ysBYI5fhtpKMP0SasDxnxFLL9fQ7J7oDtgLNyu/GO7RkIp/KAoXYz0K9uYc5vEqaclC9QkaqhkOccW2ZgrIA1GBe0IfREYup/jYu68dMCXQf7kaQltjcF6ZOllkr/IuwdC/8hNgbMxuy/fBfy38i5NxFakZ3pmbp1s+D8bVHwHugbogNNChuCYqMq4hZjA0twuCatHfhbK0nSq9gjBVTWyHNerHn+/du/CEJJSL/uoHZCMogN9FHLDTe/+L1eCr4YYPiM8GpkWFtxjn8CNP0Z7X6nVhdw5Li2byE5J9LJVK/tUGN7+SgYoD7zx5AFhtl/4AEfRsov7HPhbYdVIak9ZPHQ/btN5cUywrTcDOmThnSb2jbmYe7UvH3QJr5NP2La9mJG2SAMXrQ063obwhgUMcDHse4t6JA28RFHRkTWkPHm0Uq0GMhRIUYJUmExqkR51htPgzkkLZv2aNjS+L6xKOvXrTPdj4ZgT+Eiafj/QDwDbIFrX5WN0eiuz+xyJfd902T5bc2WkDTR6tucdgDR1Fm+awhEIjRg9A0v7hKLtcv3x9wdqRXQFr+qH9otwdPX6jguLonC1OIQLOpjIVz4JuLC9NA7xL72s0iDPP83/+PN0a16CVN2uzYnCtxHSp0=
+  - secure: qx68qO59ioIJanmhKr6DnaMV89mZJb5tsScml9mg7vHWv9gXHI3xtvvvZbKgpeLrhV92dYb/at3rdK4lOeCR0xCtA4YQMlQNuN2bY1j63IIcoUpi+xq1T0Ng9hgk/DX5fmUFnlJ1vTXWZqQ8J12azwPnu7eSKWgCsfj7SHz3K94eDRtX4gHS5RZE0tpR/eV+GVfmmQe9EQSk9vAggxjLzT0eFSs7Qh1vSiOpQjfp9uq8kPcV6z0tJQncWjsd/9Z7GOMLwC0VF/sbpjmfxtKZ0md3tiqxFb3q/D72CBix7fkl5RqaTGjGsZ8+UzTwMMyGxcngK1pCZylH7ZdsyRh6ioi+nxFs3RuRIeiUnyn1m434B4zZS0yTXPZVUW1vwVIZvKYZvVAiO6aMEy7qo9v+DFQrEbezFvWpQRCjE8xcLaq2t+W/6+Wl/myZDe54alNe6PVZEGEKveNA6Vv4vPUi1sNEahD9mKk13/IK3xFUiRYWBDipNu6VICcA5MVhIU1SP307iy1SWvBnTNHobsvORIJbyhchZu+K3ddEV0zZaIhghBXv2puzhKr5n2QypPdN97srBVU1YcthovXxE9PJN33rBl8GNG9ITXApIq8OpogrvZUfIx6D+YTs9jaHXYUIuuYUt5eYWhGFgE/fobWDeSAFt1cQjLhClq4zKz4eAQ0=
+  - secure: NAiEJvrkUWnrFeOdauoR6XV5GWGC9Loms8Tw37z4tJcZmzk8Bka0URN31r8Fuc61VcIpEpeHer7NNAKXISPf/tVW+eFo4jqK4Fb02JCK2u7xFxQH4n5urRcGEV5zbGO8Mp/6bytWbkxt/XHGZc5kFUEfXs2VBqFhlOcIe0uv4FwCfQGZ1w0QT7uTd4RO4UvagAZbLoMX/C6L/rQgce+LbQl6sbHBwBxwe1CQ01p791/3j8b1flSt5+LBFfjK0O9qAqwW6pCYXev8MKxGsBMNRAVretI3WKWp6UshPtyEFisE9ivLs7bAjZRA6+IfLyE9Um6zg1ui/gAElc0DS7fDDWdfDtB+lfg3u6KUVKjN3flHE6BWMN8jyiDvpqeQTi15CC+5szdxLp78OpLnxl1uKehnq2ztt/k5ovdWnSYmLOGQ1D/ZwJIVRPruOKVp86Pm749KmC9gtjKPyzq113F1je1UGNTRANbualATiV6Mzug/2j96cWC1dtLy52JNZ0qJJQeJewgm4yhN2b7ItkjTzmFeT1p2EXIY+CxBw8yEBSMo+05mX3AKedFGaPJHDbZLoIhHj1ePUOFRXUZN3Xjxk7oUwObgKoVMJ2h3/WVatVNp2bQwOxfvHKtCNEFHeE1aeZAIzXUMnblWn6qNJls6bT5gROoW/ZYqhtMC6u80K8c=
+branches:
+  only:
+  - master
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - "$HOME/.gradle/caches/"
+  - "$HOME/.gradle/wrapper/"
+after_success:
+- bash <(curl -s https://codecov.io/bash)
+- |-
+  set -e
+  if [[ "$TRAVIS_BRANCH" = "master" ]] && [[ "$TRAVIS_PULL_REQUEST" = "false" ]] && [[ $TRAVIS_COMMIT_MESSAGE != "JENKINS SNAPSHOT UPDATE" ]]; then
+    ./gradlew artifactPublish
+  fi
