@@ -12,7 +12,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class FWMTCreateJobRequest implements Serializable {
+public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String actionType;
 
