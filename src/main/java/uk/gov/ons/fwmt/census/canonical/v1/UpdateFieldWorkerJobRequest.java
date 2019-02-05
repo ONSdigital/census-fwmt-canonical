@@ -8,6 +8,6 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class FWMTUpdateJobRequest {
+public class UpdateFieldWorkerJobRequest {
   private String actionType;
 }
