@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Map;
+import java.util.UUID;
 
 @Data
 @AllArgsConstructor
@@ -19,6 +20,8 @@ public class CreateFieldWorkerJobRequest implements Serializable {
   private String jobIdentity;
 
   private String surveyType;
+
+  private UUID caseId;
 
   private boolean preallocatedJob;
 
