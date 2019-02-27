@@ -1,4 +1,4 @@
-package uk.gov.ons.fwmt.census.canonical.v1;
+package uk.gov.ons.census.fwmt.canonical.v1;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -8,6 +8,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
-public class UpdateFieldWorkerJobRequest {
-  private String actionType;
+public class Contact {
+    private String forename;
+
+    private String surname;
+
+    private String email;
+
+    private String phoneNumber;
 }
