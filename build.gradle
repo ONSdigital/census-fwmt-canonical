@@ -7,12 +7,12 @@ plugins {
     
 }
 
-description = 'fwmt-census-canonical'
+description = 'census-fwmt-canonical'
 
 
 version = '1.0.2-SNAPSHOT'
 
-group = 'uk.gov.ons.fwmt'
+group = 'uk.gov.ons.census.fwmt'
 
 sourceCompatibility = 11
 targetCompatibility = 11
@@ -44,7 +44,7 @@ publishing {
     publications {
         maven(MavenPublication) {
             groupId = group
-            artifactId = 'fwmt-census-canonical'
+            artifactId = 'census-fwmt-canonical'
             version = version
 
             from components.java

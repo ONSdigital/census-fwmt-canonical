@@ -1,4 +1,4 @@
-package uk.gov.ons.fwmt.census.canonical.v1;
+package uk.gov.ons.census.fwmt.canonical.v1;
 
 import java.math.BigDecimal;
 
