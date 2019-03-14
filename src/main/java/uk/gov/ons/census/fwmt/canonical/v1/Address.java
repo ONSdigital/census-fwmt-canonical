@@ -12,9 +12,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Address {
 
-  private Long ARID;
+  private String arid;
 
-  private Long UPRN;
+  private String uprn;
 
   private String line1;
 

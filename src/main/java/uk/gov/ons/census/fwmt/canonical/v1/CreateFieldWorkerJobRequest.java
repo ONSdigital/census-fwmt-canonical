@@ -25,9 +25,9 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String mandatoryResource;
 
-  private String coordinatorCode;
-
   private String coordinatorId;
+
+  private String blankFormReturned;
 
   private String uua;
 
@@ -39,13 +39,13 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String ccsQuestionnaireURL;
 
-  private String ceDeliveryRequired;
+  private boolean ceDeliveryRequired;
 
-  private String ceCE1Complete;
+  private boolean ceCE1Complete;
 
-  private String ceExpectedResponses;
+  private int ceExpectedResponses;
 
-  private String ceActualResponses;
+  private int ceActualResponses;
 
   private String category;
 
