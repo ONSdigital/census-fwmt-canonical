@@ -37,4 +37,6 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String category;
 
+  private String caseReference;
+
 }
