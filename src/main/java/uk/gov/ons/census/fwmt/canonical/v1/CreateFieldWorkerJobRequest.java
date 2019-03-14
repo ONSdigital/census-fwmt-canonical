@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.Map;
 import java.util.UUID;
 
 @Data
@@ -55,7 +54,4 @@ public class CreateFieldWorkerJobRequest implements Serializable {
   private Address address;
 
   private Pause pause;
-
-  // TODO are additional properties still a thing?
-  private Map<String, String> additionalProperties;
 }
