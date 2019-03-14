@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.util.Map;
 import java.util.UUID;
 
@@ -15,28 +14,45 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class CreateFieldWorkerJobRequest implements Serializable {
 
-  private String actionType;
-
-  private String jobIdentity;
-
-  private String surveyType;
-
   private UUID caseId;
-
-  private boolean preallocatedJob;
-
-  private String mandatoryResourceAuthNo;
-
-  private LocalDate dueDate;
-
-  private Address address;
-
-  private Contact contact;
-
-  private Map<String, String> additionalProperties;
-
-  private String category;
 
   private String caseReference;
 
+  private String caseType;
+
+  private String surveyType;
+
+  private String establishmentType;
+
+  private String mandatoryResource;
+
+  private String coordinatorCode;
+
+  private String uua;
+
+  private boolean sai;
+
+  private String description;
+
+  private String specialInstructions;
+
+  private String ccsQuestionnaireURL;
+
+  private String ceDeliveryRequired;
+
+  private String ceCE1Complete;
+
+  private String ceExpectedResponses;
+
+  private String ceActualResponses;
+
+  private String category;
+
+  private Contact contact;
+
+  private Address address;
+
+  private Pause pause;
+
+  private Map<String, String> additionalProperties;
 }

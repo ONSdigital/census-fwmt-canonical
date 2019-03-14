@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Address {
 
+  private Long ARID;
+
   private Long UPRN;
 
   private String line1;
@@ -30,8 +32,6 @@ public class Address {
 
   private BigDecimal longitude;
 
-  private String organisationName;
-
-  private String geography;
+  private String oa;
 
 }
