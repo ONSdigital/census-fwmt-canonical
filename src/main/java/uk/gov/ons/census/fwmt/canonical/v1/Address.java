@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Address {
 
+  private Long UPRN;
+
   private String line1;
 
   private String line2;
