@@ -54,5 +54,6 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private Pause pause;
 
+  // TODO are additional properties still a thing?
   private Map<String, String> additionalProperties;
 }
