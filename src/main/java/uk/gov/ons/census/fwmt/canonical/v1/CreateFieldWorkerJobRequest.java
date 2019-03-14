@@ -29,7 +29,7 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String blankFormReturned;
 
-  private String uua;
+  private boolean uua;
 
   private boolean sai;
 
