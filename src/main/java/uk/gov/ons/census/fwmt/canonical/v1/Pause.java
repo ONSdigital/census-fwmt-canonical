@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.OffsetDateTime;
 
 @Data
 @AllArgsConstructor
@@ -14,5 +15,5 @@ public class Pause implements Serializable {
   private String effectiveDate;
   private String code;
   private String reason;
-  private String holdUntil;
+  private OffsetDateTime holdUntil;
 }
