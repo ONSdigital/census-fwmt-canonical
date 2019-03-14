@@ -35,4 +35,6 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private Map<String, String> additionalProperties;
 
+  private String category;
+
 }
