@@ -28,6 +28,8 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String coordinatorCode;
 
+  private String coordinatorId;
+
   private String uua;
 
   private boolean sai;
