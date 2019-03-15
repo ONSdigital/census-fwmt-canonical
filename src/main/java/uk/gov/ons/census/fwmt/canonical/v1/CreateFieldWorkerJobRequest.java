@@ -13,6 +13,8 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class CreateFieldWorkerJobRequest implements Serializable {
 
+  private String actionType;
+
   private UUID caseId;
 
   private String caseReference;
