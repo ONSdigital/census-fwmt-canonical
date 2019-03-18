@@ -13,7 +13,7 @@ public class Contact {
 
     private String surname;
 
-    private String email;
+    private String organisationName;
 
     private String phoneNumber;
 }
