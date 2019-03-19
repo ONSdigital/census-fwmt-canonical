@@ -1,16 +1,20 @@
 package uk.gov.ons.census.fwmt.canonical.v1;
 
-import java.math.BigDecimal;
-
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class Address {
+
+  private String arid;
+
+  private String uprn;
 
   private String line1;
 
@@ -28,6 +32,6 @@ public class Address {
 
   private BigDecimal longitude;
 
-  private String organisationName;
+  private String oa;
 
 }
