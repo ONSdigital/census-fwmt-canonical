@@ -16,4 +16,6 @@ public class Contact {
     private String organisationName;
 
     private String phoneNumber;
+
+    private String emailAddress;
 }
