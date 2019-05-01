@@ -1,31 +1,32 @@
-
 plugins {
-    id 'java'
-    id 'maven'
+    id 'java-library'
+
     id 'maven-publish'
-    id 'com.jfrog.artifactory' version '4.8.1'
-    
+    id 'com.jfrog.artifactory' version '4.9.6'
+
+    id 'idea'
+    id 'eclipse'
+    id 'com.github.ben-manes.versions' version '0.21.0'
 }
 
 description = 'census-fwmt-canonical'
-
-
-version = '1.0.10-SNAPSHOT'
-
 group = 'uk.gov.ons.census.fwmt'
+version = '1.0.10-SNAPSHOT'
 
 sourceCompatibility = 11
 targetCompatibility = 11
 
 dependencies {
-    compile("org.projectlombok:lombok:1.18.4")
-    annotationProcessor("org.projectlombok:lombok:1.18.4")
+    compile 'org.projectlombok:lombok:1.18.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.6'
 }
 
 repositories {
     mavenLocal()
-    maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-release' }
-    maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-snapshot' }
+    if (!project.hasProperty('omitSDCArtifactory')) {
+        maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-release' }
+        maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-snapshot' }
+    }
     mavenCentral()
 }
 
