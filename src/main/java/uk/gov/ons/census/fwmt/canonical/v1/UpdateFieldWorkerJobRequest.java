@@ -16,10 +16,10 @@ public class UpdateFieldWorkerJobRequest {
   private String actionType;
   private String addressType;
   private String addressLevel;
-  private Boolean undeliveredAsAddressed;
-  private Boolean blankQreReturned;
+  private boolean undeliveredAsAddressed;
+  private boolean blankQreReturned;
   private OffsetDateTime until;
-  private Boolean ce1Complete;
+  private boolean ce1Complete;
   private int ceExpectedResponses;
   private int ceActualResponses;
 }
