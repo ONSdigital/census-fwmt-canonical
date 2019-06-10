@@ -12,13 +12,14 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class UpdateFieldWorkerJobRequest {
-  private UUID id;
   private String actionType;
+  private UUID caseId;
+  private String establishmentType;
   private String addressType;
   private String addressLevel;
-  private boolean undeliveredAsAddressed;
-  private boolean blankQreReturned;
-  private OffsetDateTime until;
+  private boolean uaa;
+  private boolean blankFormReturned;
+  private OffsetDateTime holdUntil;
   private boolean ce1Complete;
   private int ceExpectedResponses;
   private int ceActualResponses;
