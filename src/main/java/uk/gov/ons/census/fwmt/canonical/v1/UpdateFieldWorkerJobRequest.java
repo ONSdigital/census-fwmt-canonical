@@ -13,6 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor(access = AccessLevel.PUBLIC)
 public class UpdateFieldWorkerJobRequest {
   private String actionType;
+  private String gatewayType;
   private UUID caseId;
   private String establishmentType;
   private String addressType;
