@@ -17,6 +17,8 @@ public class CancelFieldWorkerJobRequest implements Serializable {
 
   private String actionType;
 
+  private String gatewayType;
+
   private UUID caseId;
 
   private OffsetDateTime until;

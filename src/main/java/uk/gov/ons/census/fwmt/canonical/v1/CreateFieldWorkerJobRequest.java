@@ -15,6 +15,8 @@ public class CreateFieldWorkerJobRequest implements Serializable {
 
   private String actionType;
 
+  private String gatewayType;
+
   private UUID caseId;
 
   private String caseReference;
