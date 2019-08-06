@@ -9,7 +9,7 @@ plugins {
 
 description = 'census-fwmt-canonical'
 
-version = '1.0.16-RELEASE'
+version = '1.0.17-SNAPSHOT'
 
 group = 'uk.gov.ons.census.fwmt'
 
