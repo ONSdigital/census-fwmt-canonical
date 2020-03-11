@@ -4,7 +4,7 @@ plugins {
     id 'maven'
     id 'maven-publish'
     id 'com.jfrog.artifactory' version '4.8.1'
-    
+
 }
 
 description = 'census-fwmt-canonical'
@@ -23,8 +23,22 @@ dependencies {
 
 repositories {
     mavenLocal()
-    maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-release' }
-    maven { url 'http://artifactory-sdc.onsdigital.uk/artifactory/libs-snapshot' }
+
+    maven {
+        url 'https://ons.jfrog.io/ons/libs-releases-virtual'
+        credentials {
+            username "${artifactory_user}"
+            password "${artifactory_password}"
+        }
+    }
+    maven {
+        url 'https://ons.jfrog.io/ons/libs-snapshots-virtual'
+        credentials {
+            username "${artifactory_user}"
+            password "${artifactory_password}"
+        }
+    }
+
     mavenCentral()
 }
 
