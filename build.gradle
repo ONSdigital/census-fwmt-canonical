@@ -41,8 +41,7 @@ repositories {
 
     mavenCentral()
 }
-ARTIFACTORY_URL
-ARTIFACTORY_USERNAME
+
 
 artifactory {
     contextUrl = System.getenv('ARTIFACTORY_URL')
